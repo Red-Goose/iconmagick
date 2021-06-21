@@ -1,6 +1,8 @@
 # ICONOCLAST
 
-Icon management for Mobile Apps. Create icons, generate all required sizes, label and annotate. Supports Native, Cordova, React Native, Xamarin and more. Inspired by [cordova-icon](https://github.com/AlexDisler/cordova-icon). Node 10 and onwards supported.
+Icon management for mobile apps. Create icons, generate all the required sizes, label, and annotate. Supports Swift Native, Kotlin Native, React Native, Cordova, Xamarin, and more. 
+
+Inspired by [cordova-icon](https://github.com/AlexDisler/cordova-icon). Node 10 and up.
 
 <!-- <img src="./assets/banner/banner.png" width="614" alt="Banner"> -->
 
@@ -32,12 +34,12 @@ Icon management for Mobile Apps. Create icons, generate all required sizes, labe
 
 ## Introduction
 
-This simple tool allows you to create a single icon in your app project, then create icons of all required sizes from it. It currently works for iOS and Android. You can also add labels to your app icons.
+Iconoclast allows you to use a single icon image in your app project to create icons of all the required sizes for iOS and Android. You can also add labels to your app icons.
 
 Create a single large `icon.png` at least 192 pixels square, or run `iconoclast init` to create this icon, then run:
 
 ```bash
-# If you are using npm 5.2 onwards...
+# If you are using npm 5.2 onwards…
 npx iconoclast generate
 
 # ...for older versions of npm
@@ -155,7 +157,7 @@ iconoclast label -i icon.png -o output.png --top UAT --bottom 0.12.3
 
 This would produce output like the below image:
 
-![Labelled Icon Image](./assets/label.png)
+![labeled Icon Image](./assets/label.png)
 
 This is a useful trick when you are creating things like internal QA versions of your app, where you might want to show a version number or other label in the icon itself.
 
@@ -280,9 +282,9 @@ To run the native apps, open the `./test/NativeApp` directory, then open the iOS
 
 ## Compatibility
 
-`iconoclast` dependds on [ImageMagick](https://www.imagemagick.org/). ImageMagick 6 is installed by default on many Linux distributions, as well as OSX. Some platforms are regularly tested (such as Ubuntu, via CircleCI). Other platforms *may* work but are not tested when I make a release, so your results may vary.
+`iconoclast` depends on [ImageMagick](https://www.imagemagick.org/). ImageMagick 6 is installed by default on many Linux distributions, as well as OSX. Some platforms are regularly tested (such as Ubuntu, via CircleCI). Other platforms *may* work but are not tested when I make a release, so your results may vary.
 
-The table below shows the current confirmed compatibility:
+The table below shows the confirmed compatibility:
 
 | Platform  | `iconoclast` | ImageMagick | Status |
 |-----------|------------|-------------|--------|
@@ -291,7 +293,7 @@ The table below shows the current confirmed compatibility:
 
 ## Troubleshooting
 
-**Images labelled with `iconoclast label` have the text slightly vertically offset**
+**Images labeled with `iconoclast label` have the text slightly vertically offset**
 
 This seems to be an issue with Imagemagick 6 - try upgrading to 7.
 

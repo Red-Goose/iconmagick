@@ -1,5 +1,5 @@
 {
-  "name": "iconifier",
+  "name": "iconoclast",
   "version": "0.13.4",
   "description": "Automatic icon resizing for mobile apps.",
   "main": "./src/index.js",
@@ -7,10 +7,10 @@
     "node": ">=10"
   },
   "bin": {
-    "app-icon": "./bin/app-icon.js"
+    "iconoclast": "./bin/iconoclast.js"
   },
   "scripts": {
-    "start": "./bin/app-icon.js",
+    "start": "./bin/iconoclast.js",
     "test": "mocha --timeout 20000 ./src/{,**/}*.specs.js",
     "test:debug": "mocha -d -w ./src/{,**/}*.specs.js",
     "cov": "nyc mocha --timeout 20000 ./src/{,**/}*.specs.js",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dwmkerr/app-icon.git"
+    "url": "git+https://github.com/Red-Goose/iconoclast"
   },
   "keywords": [
     "android",
@@ -33,9 +33,9 @@
   "author": "Dave Kerr",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dwmkerr/app-icon/issues"
+    "url": "https://github.com/Red-Goose/iconoclast/issues"
   },
-  "homepage": "https://github.com/dwmkerr/app-icon#readme",
+  "homepage": "https://github.com/Red-Goose/iconoclast#readme",
   "devDependencies": {
     "chai": "^4.3.4",
     "eslint": "^7.29.0",
