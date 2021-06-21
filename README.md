@@ -1,10 +1,5 @@
 # ICONOCLAST
 
-This library is a hard fork of [app-icon](https://github.com/dwmkerr/app-icon) by [Dave Kerr](https://github.com/dwmkerr). All credits for the bulk of the work and good will be sent their way. 
-
-
-[![npm version](https://badge.fury.io/js/iconoclast.svg)](https://badge.fury.io/js/iconoclast) [![CircleCI](https://circleci.com/gh/dwmkerr/iconoclast.svg?style=shield)](https://circleci.com/gh/dwmkerr/iconoclast) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/3e334rknhjbpx555?svg=true)](https://ci.appveyor.com/project/dwmkerr/iconoclast) [![codecov](https://codecov.io/gh/dwmkerr/iconoclast/branch/master/graph/badge.svg)](https://codecov.io/gh/dwmkerr/iconoclast) [![dependencies Status](https://david-dm.org/dwmkerr/iconoclast/status.svg)](https://david-dm.org/dwmkerr/iconoclast) [![devDependencies Status](https://david-dm.org/dwmkerr/iconoclast/dev-status.svg)](https://david-dm.org/dwmkerr/iconoclast?type=dev) [![GuardRails badge](https://badges.guardrails.io/dwmkerr/iconoclast.svg?token=569f2cc38a148f785f3a38ef0bcf5f5964995d7ca625abfad9956b14bd06ad96&provider=github)](https://dashboard.guardrails.io/default/gh/dwmkerr/iconoclast) [![Greenkeeper badge](https://badges.greenkeeper.io/dwmkerr/iconoclast.svg)](https://greenkeeper.io/) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
-
 Icon management for Mobile Apps. Create icons, generate all required sizes, label and annotate. Supports Native, Cordova, React Native, Xamarin and more. Inspired by [cordova-icon](https://github.com/AlexDisler/cordova-icon). Node 10 and onwards supported.
 
 <!-- <img src="./assets/banner/banner.png" width="614" alt="Banner"> -->
@@ -303,3 +298,11 @@ This seems to be an issue with Imagemagick 6 - try upgrading to 7.
 ## License
 
 MIT
+
+
+## Credits
+
+This library is a hard fork of [app-icon](https://github.com/dwmkerr/app-icon) by [Dave Kerr](https://github.com/dwmkerr). All credits for the bulk of the work and good will be sent their way. 
+
+
+[![npm version](https://badge.fury.io/js/iconoclast.svg)](https://badge.fury.io/js/iconoclast) [![CircleCI](https://circleci.com/gh/dwmkerr/iconoclast.svg?style=shield)](https://circleci.com/gh/dwmkerr/iconoclast) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/3e334rknhjbpx555?svg=true)](https://ci.appveyor.com/project/dwmkerr/iconoclast) [![codecov](https://codecov.io/gh/dwmkerr/iconoclast/branch/master/graph/badge.svg)](https://codecov.io/gh/dwmkerr/iconoclast) [![dependencies Status](https://david-dm.org/dwmkerr/iconoclast/status.svg)](https://david-dm.org/dwmkerr/iconoclast) [![devDependencies Status](https://david-dm.org/dwmkerr/iconoclast/dev-status.svg)](https://david-dm.org/dwmkerr/iconoclast?type=dev) [![GuardRails badge](https://badges.guardrails.io/dwmkerr/iconoclast.svg?token=569f2cc38a148f785f3a38ef0bcf5f5964995d7ca625abfad9956b14bd06ad96&provider=github)](https://dashboard.guardrails.io/default/gh/dwmkerr/iconoclast) [![Greenkeeper badge](https://badges.greenkeeper.io/dwmkerr/iconoclast.svg)](https://greenkeeper.io/) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
