@@ -1,0 +1,27 @@
+{
+    "images" : [
+      {
+        "filename" : "iTunesArtwork@2x.png",
+        "idiom" : "universal",
+        "size": "512x512",
+        "scale" : "1x"
+      },
+      {
+        "filename" : "iTunesArtwork@1x.png",
+        "idiom" : "universal",
+        "size": "512x512",
+        "scale" : "2x"
+      },
+      {
+        "filename" : "iTunesArtwork@3x.png",
+        "idiom" : "universal",
+        "size": "512x512",
+        "scale" : "3x"
+      }
+    ],
+    "info" : {
+      "author" : "xcode",
+      "version" : 1
+    }
+  }
+  
