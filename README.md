@@ -201,7 +201,7 @@ Install the dependencies (I recommend [Node Version Manager](https://github.com/
 ```bash
 nvm install 8
 nvm use 8
-git clone git@github.com:dwmkerr/iconoclast.git
+git clone git@github.com:Red-Goose/iconoclast.git
 cd iconoclast
 npm install && npm test
 ```
@@ -240,7 +240,7 @@ Builds are run on CircleCI. You can run the CircleCI build locally with the foll
 make circleci
 ```
 
-The builds use custom docker images which contain the appropriate Node.js runtime, as well as the ImageMagick binaries. These custom images are stored in the `.circleci/images` folder. You can use the `.circleci/images/makefile` makefile to build them, but permissions to push to the `dwmkerr` Docker Hub account are required to publish these images. In general, these should not need to be modified.
+The builds use custom docker images which contain the appropriate Node.js runtime, as well as the ImageMagick binaries. These custom images are stored in the `.circleci/images` folder. You can use the `.circleci/images/makefile` makefile to build them, but permissions to push to the `Red-Goose` Docker Hub account are required to publish these images. In general, these should not need to be modified.
 
 ### Debugging
 
