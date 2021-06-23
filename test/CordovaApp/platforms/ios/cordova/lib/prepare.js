@@ -340,7 +340,7 @@ function getIconsDir(projectRoot, platformProjDir) {
     var xcassetsExists = folderExists(path.join(projectRoot, platformProjDir, 'Images.xcassets/'));
 
     if (xcassetsExists) {
-        iconsDir = path.join(platformProjDir, 'Images.xcassets/AppIcon.appiconset/');
+        iconsDir = path.join(platformProjDir, 'Images.xcassets/IconMagick.appiconset/');
     } else {
         iconsDir = path.join(platformProjDir, 'Resources/icons/');
     }

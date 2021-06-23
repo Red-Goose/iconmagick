@@ -1,10 +1,10 @@
 node_modules/
 artifacts/
-test/ReactNativeIconTest/ios/ReactNativeIconTest/Images.xcassets/AppIcon.appiconset/
+test/ReactNativeIconTest/ios/ReactNativeIconTest/Images.xcassets/IconMagick.appiconset/
 test/ReactNativeIconTest/android/app/src/main/res
-test/CordovaApp/platforms/ios/ionic_app/Images.xcassets/AppIcon.appiconset
+test/CordovaApp/platforms/ios/ionic_app/Images.xcassets/IconMagick.appiconset
 test/CordovaApp/platforms/android/res
-test/NativeApp/ios/native_app/Assets.xcassets/AppIcon.appiconset
+test/NativeApp/ios/native_app/Assets.xcassets/IconMagick.appiconset
 test/NativeApp/android/native_app/src/main/res
 npm-debug.log
 src/init/test-images/*-output.png

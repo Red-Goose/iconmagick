@@ -5,7 +5,7 @@ const { promisify } = require('util');
 const writeFileAsync = promisify(fs.writeFile);
 
 const resizeImage = require('../resize/resize-image');
-const contentsTemplate = require('./AppIcon.iconset.Contents.template.json');
+const contentsTemplate = require('./IconMagick.iconset.Contents.template.json');
 
 //  Generate xCode icons given an iconset folder.
 module.exports = async function generateIconSetIcons(sourceIcon, iconset) {

@@ -34,40 +34,40 @@ Inspired by [cordova-icon](https://github.com/AlexDisler/cordova-icon). Node 10 
 
 ## Introduction
 
-Iconoclast allows you to use a single icon image in your app project to create icons of all the required sizes for iOS and Android. You can also add labels to your app icons.
+iconmagick allows you to use a single icon image in your app project to create icons of all the required sizes for iOS and Android. You can also add labels to your app icons.
 
-Create a single large `icon.png` at least 192 pixels square, or run `iconoclast init` to create this icon, then run:
+Create a single large `icon.png` at least 192 pixels square, or run `iconmagick init` to create this icon, then run:
 
 ```bash
 # If you are using npm 5.2 onwards…
-npx iconoclast generate
+npx iconmagick generate
 
 # ...for older versions of npm
-npm install -g iconoclast
-iconoclast generate
+npm install -g iconmagick
+iconmagick generate
 ```
 
 You can also use the module directly in node:
 
 ```js
 /**
- * appIcon = {
+ * iconMagick = {
  *   labelImage(inputFilePath, outputFilePath, topText, bottomText),
  *   generate({ sourceIcon, platforms, search }),
  *   templates: {
  *     'AndroidManifest.icons': {...json file...},
- *     'AppIcon.iconset': {...json file...},
+ *     'IconMagick.iconset': {...json file...},
  *   },
  * }
  */
-import appIcon from 'iconoclast';
+import iconMagick from 'iconmagick';
 
 Promise.resolve()
-  .then(() => appIcon.labelImage('./inputfile.png', './out.png', 'UAT', '0.12.3'))
-  .then(() => appIcon.labelImage('./inputfile.png', './out.png', 'UAT')) // Bottom text optional
-  .then(() => appIcon.labelImage('./inputfile.png', './out.png', null, '0.12.3')) // Top text optional
-  .then(() => appIcon.generate()) // will use all default values
-  .then(() => appIcon.generate({
+  .then(() => iconMagick.labelImage('./inputfile.png', './out.png', 'UAT', '0.12.3'))
+  .then(() => iconMagick.labelImage('./inputfile.png', './out.png', 'UAT')) // Bottom text optional
+  .then(() => iconMagick.labelImage('./inputfile.png', './out.png', null, '0.12.3')) // Top text optional
+  .then(() => iconMagick.generate()) // will use all default values
+  .then(() => iconMagick.generate({
     sourceIcon: './icon.png', // Path of the icon to use
     platforms: 'android,ios', // The platforms to generate icons for (i.e. 'android')
     search: './',
@@ -79,7 +79,7 @@ Promise.resolve()
 Install with:
 
 ```bash
-npm install -g iconoclast
+npm install -g iconmagick
 ```
 
 You will need [imagemagick](http://www.imagemagick.org/) installed:
@@ -92,36 +92,36 @@ sudo yum install imagemagick      # CentOS/etc
 
 ## Usage
 
-The `iconoclast` tool can be used to create a simple template icon, generate icons of all sizes from a template icon, or label icons.
+The `iconmagick` tool can be used to create a simple template icon, generate icons of all sizes from a template icon, or label icons.
 
 ### Initialising
 
 If you do not already have a single icon to use as the main icon for your project, you can create one with the `init` command:
 
 ```bash
-iconoclast init                    # generates an icon named icon.png
+iconmagick init                    # generates an icon named icon.png
 ```
 
 You can also add a simple label to the icon.
 
 ```bash
-iconoclast init --caption "App"    # creates an icon with the text 'App'
+iconmagick init --caption "App"    # creates an icon with the text 'App'
 ```
 
 To create template [Adaptive Icons for Android](https://developer.android.com/guide/practices/ui_guidelines/icon_design_adaptive) include the `--adaptive-icons` flag.
 
 ### Generating Icons
 
-Add an icon (ideally at least 192x192 pixels) named `icon.png` to your project root (or run `iconoclast init`). To automatically generate icons of all sizes for all app projects in the same folder, run:
+Add an icon (ideally at least 192x192 pixels) named `icon.png` to your project root (or run `iconmagick init`). To automatically generate icons of all sizes for all app projects in the same folder, run:
 
 ```bash
-iconoclast generate
+iconmagick generate
 ```
 
 If an iOS project is present, then the icon will be copied at all required sizes to:
 
 ```
-./ios/<ProjectName>/Images.xcassets/AppIcon.appiconset
+./ios/<ProjectName>/Images.xcassets/IconMagick.appiconset
 ```
 
 If an Android project is present, then the icon will be copied at all required sizes to:
@@ -133,8 +133,8 @@ If an Android project is present, then the icon will be copied at all required s
 You can limit the platforms which icons are generated for with the `--platforms` flag, specifying:
 
 ```bash
-iconoclast generate --platforms=ios
-iconoclast generate --platforms=android,ios
+iconmagick generate --platforms=ios
+iconmagick generate --platforms=android,ios
 ```
 
 By default the tool will generate icons for both platforms.
@@ -142,17 +142,17 @@ By default the tool will generate icons for both platforms.
 You can search in specific directories for icons, if the presence of other projects is interfering, just use the `--search` or `-s` parameter:
 
 ```bash
-iconoclast generate -s ./ios -s ./android
+iconmagick generate -s ./ios -s ./android
 ```
 
-You can specify the path to the source icon, as well as the folder to search for app projects, just run `iconoclast generate -h` to see the options.
+You can specify the path to the source icon, as well as the folder to search for app projects, just run `iconmagick generate -h` to see the options.
 
 ### Labelling Icons
 
 Add labels to an icon with the command below:
 
 ```bash
-iconoclast label -i icon.png -o output.png --top UAT --bottom 0.12.3
+iconmagick label -i icon.png -o output.png --top UAT --bottom 0.12.3
 ```
 
 This would produce output like the below image:
@@ -201,8 +201,8 @@ Install the dependencies (I recommend [Node Version Manager](https://github.com/
 ```bash
 nvm install 8
 nvm use 8
-git clone git@github.com:Red-Goose/iconoclast.git
-cd iconoclast
+git clone git@github.com:Red-Goose/iconmagick.git
+cd iconmagick
 npm install && npm test
 ```
 
@@ -244,10 +244,10 @@ The builds use custom docker images which contain the appropriate Node.js runtim
 
 ### Debugging
 
-The [`debug`](https://www.npmjs.com/package/debug) package is used to support low-level debugging. If you want to see debug messages when running the tool, just set the `DEBUG` environment variable to `iconoclast`:
+The [`debug`](https://www.npmjs.com/package/debug) package is used to support low-level debugging. If you want to see debug messages when running the tool, just set the `DEBUG` environment variable to `iconmagick`:
 
 ```sh
-DEBUG=iconoclast iconoclast generate --platforms android
+DEBUG=iconmagick iconmagick generate --platforms android
 ```
 
 ## The Sample Projects
@@ -282,18 +282,18 @@ To run the native apps, open the `./test/NativeApp` directory, then open the iOS
 
 ## Compatibility
 
-`iconoclast` depends on [ImageMagick](https://www.imagemagick.org/). ImageMagick 6 is installed by default on many Linux distributions, as well as OSX. Some platforms are regularly tested (such as Ubuntu, via CircleCI). Other platforms *may* work but are not tested when I make a release, so your results may vary.
+`iconmagick` depends on [ImageMagick](https://www.imagemagick.org/). ImageMagick 6 is installed by default on many Linux distributions, as well as OSX. Some platforms are regularly tested (such as Ubuntu, via CircleCI). Other platforms *may* work but are not tested when I make a release, so your results may vary.
 
 The table below shows the confirmed compatibility:
 
-| Platform  | `iconoclast` | ImageMagick | Status |
+| Platform  | `iconmagick` | ImageMagick | Status |
 |-----------|------------|-------------|--------|
 | OSX       | `0.6.x`    | 6, 7        | ✅     |
 | Ubuntu 14 | `0.6.x`    | 6           | ✅     |
 
 ## Troubleshooting
 
-**Images labeled with `iconoclast label` have the text slightly vertically offset**
+**Images labeled with `iconmagick label` have the text slightly vertically offset**
 
 This seems to be an issue with Imagemagick 6 - try upgrading to 7.
 
@@ -302,9 +302,10 @@ This seems to be an issue with Imagemagick 6 - try upgrading to 7.
 MIT
 
 
-## Credits
+## Credit
 
-This library is a hard fork of [app-icon](https://github.com/dwmkerr/app-icon) by [Dave Kerr](https://github.com/dwmkerr). All credits for the bulk of the work and good will be sent their way. 
+This library is a hard fork of [app-icon](https://github.com/dwmkerr/app-icon) by [Dave Kerr](https://github.com/dwmkerr). All credit for the bulk of the work and good-will be sent their way.
 
 
-[![npm version](https://badge.fury.io/js/iconoclast.svg)](https://badge.fury.io/js/iconoclast) [![CircleCI](https://circleci.com/gh/dwmkerr/iconoclast.svg?style=shield)](https://circleci.com/gh/dwmkerr/iconoclast) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/3e334rknhjbpx555?svg=true)](https://ci.appveyor.com/project/dwmkerr/iconoclast) [![codecov](https://codecov.io/gh/dwmkerr/iconoclast/branch/master/graph/badge.svg)](https://codecov.io/gh/dwmkerr/iconoclast) [![dependencies Status](https://david-dm.org/dwmkerr/iconoclast/status.svg)](https://david-dm.org/dwmkerr/iconoclast) [![devDependencies Status](https://david-dm.org/dwmkerr/iconoclast/dev-status.svg)](https://david-dm.org/dwmkerr/iconoclast?type=dev) [![GuardRails badge](https://badges.guardrails.io/dwmkerr/iconoclast.svg?token=569f2cc38a148f785f3a38ef0bcf5f5964995d7ca625abfad9956b14bd06ad96&provider=github)](https://dashboard.guardrails.io/default/gh/dwmkerr/iconoclast) [![Greenkeeper badge](https://badges.greenkeeper.io/dwmkerr/iconoclast.svg)](https://greenkeeper.io/) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+
+[![npm version](https://badge.fury.io/js/iconmagick.svg)](https://badge.fury.io/js/iconmagick) [![CircleCI](https://circleci.com/gh/dwmkerr/iconmagick.svg?style=shield)](https://circleci.com/gh/dwmkerr/iconmagick) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/3e334rknhjbpx555?svg=true)](https://ci.appveyor.com/project/dwmkerr/iconmagick) [![codecov](https://codecov.io/gh/dwmkerr/iconmagick/branch/master/graph/badge.svg)](https://codecov.io/gh/dwmkerr/iconmagick) [![dependencies Status](https://david-dm.org/dwmkerr/iconmagick/status.svg)](https://david-dm.org/dwmkerr/iconmagick) [![devDependencies Status](https://david-dm.org/dwmkerr/iconmagick/dev-status.svg)](https://david-dm.org/dwmkerr/iconmagick?type=dev) [![GuardRails badge](https://badges.guardrails.io/dwmkerr/iconmagick.svg?token=569f2cc38a148f785f3a38ef0bcf5f5964995d7ca625abfad9956b14bd06ad96&provider=github)](https://dashboard.guardrails.io/default/gh/dwmkerr/iconmagick) [![Greenkeeper badge](https://badges.greenkeeper.io/dwmkerr/iconmagick.svg)](https://greenkeeper.io/) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
