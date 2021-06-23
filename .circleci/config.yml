@@ -4,7 +4,7 @@ jobs:
   # a coverage report.
   test-common: &test-common
     docker:
-        - image: dwmkerr/node:10-imagemagick
+        - image: satie/node:10-imagemagick
     steps:
       - checkout
       - run: make test
@@ -20,15 +20,15 @@ jobs:
   test-node10:
     <<: *test-common
     docker:
-      - image: dwmkerr/node:10-imagemagick
+      - image: satie/node:10-imagemagick
   test-node12:
     <<: *test-common
     docker:
-      - image: dwmkerr/node:12-imagemagick
+      - image: satie/node:12-imagemagick
   test-node14:
     <<: *test-common
     docker:
-      - image: dwmkerr/node:14-imagemagick
+      - image: satie/node:14-imagemagick
 
 workflows:
   version: 2

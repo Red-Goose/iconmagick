@@ -1,4 +1,4 @@
-# ICONOCLAST
+# ICONMAGICK
 
 Icon management for mobile apps. Create icons, generate all the required sizes, label, and annotate. Supports Swift Native, Kotlin Native, React Native, Cordova, Xamarin, and more. 
 

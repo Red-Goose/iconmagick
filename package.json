@@ -1,5 +1,5 @@
 {
-  "name": "iconoclast",
+  "name": "iconmagick",
   "version": "0.13.4",
   "description": "Automatic icon resizing for mobile apps.",
   "main": "./src/index.js",
@@ -7,10 +7,11 @@
     "node": ">=10"
   },
   "bin": {
-    "iconoclast": "./bin/iconoclast.js"
+    "iconmagick": "./bin/iconmagick.js",
+    "im": "./bin/iconmagick.js"
   },
   "scripts": {
-    "start": "./bin/iconoclast.js",
+    "start": "./bin/iconmagick.js",
     "test": "mocha --timeout 20000 ./src/{,**/}*.specs.js",
     "test:debug": "mocha -d -w ./src/{,**/}*.specs.js",
     "cov": "nyc mocha --timeout 20000 ./src/{,**/}*.specs.js",
@@ -19,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Red-Goose/iconoclast"
+    "url": "git+https://github.com/Red-Goose/iconmagick"
   },
   "keywords": [
     "android",
@@ -33,9 +34,9 @@
   "author": "Dave Kerr",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Red-Goose/iconoclast/issues"
+    "url": "https://github.com/Red-Goose/iconmagick/issues"
   },
-  "homepage": "https://github.com/Red-Goose/iconoclast#readme",
+  "homepage": "https://github.com/Red-Goose/iconmagick#readme",
   "devDependencies": {
     "chai": "^4.3.4",
     "eslint": "^7.29.0",
