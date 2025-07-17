@@ -7,8 +7,8 @@
     "node": ">=18"
   },
   "bin": {
-    "iconmagick": "./bin/iconmagick.js",
-    "im": "./bin/iconmagick.js"
+    "iconmagick": "bin/iconmagick.js",
+    "im": "bin/iconmagick.js"
   },
   "scripts": {
     "start": "./bin/iconmagick.js",
@@ -16,11 +16,12 @@
     "test:debug": "mocha -d -w ./src/{,**/}*.specs.js",
     "cov": "nyc mocha --timeout 20000 ./src/{,**/}*.specs.js",
     "lint": "eslint .",
-    "release": "standard-version"
+    "release": "standard-version",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Red-Goose/iconmagick"
+    "url": "git+https://github.com/Red-Goose/iconmagick.git"
   },
   "keywords": [
     "android",
@@ -38,6 +39,8 @@
   },
   "homepage": "https://github.com/Red-Goose/iconmagick#readme",
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.0",
+    "@semantic-release/git": "^10.0.0",
     "chai": "^4.3.10",
     "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -45,6 +48,7 @@
     "eslint-plugin-node": "^11.1.0",
     "mocha": "^10.2.0",
     "nyc": "^15.1.0",
+    "semantic-release": "^21.0.0",
     "standard-version": "^9.5.0"
   },
   "dependencies": {
