@@ -1,5 +1,5 @@
 const path = require('path');
-const mkdirp = require('mkdirp');
+const { mkdirp } = require('mkdirp');
 
 const androidManifestIcons = require('./AndroidManifest.icons.json');
 const resizeImage = require('../resize/resize-image');

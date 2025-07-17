@@ -39,6 +39,18 @@
         {
             "comment": "Note that the anydpi folder will *not* contain icons - it contains a reference to the mipmaps for specific sizes",
             "folder": "res/mipmap-anydpi-v26"
+        },
+        {
+            "folder": "res/mipmap-anydpi-v33",
+            "comment": "Support for Android 13+ (API 33+) with monochrome icons"
+        },
+        {
+            "folder": "res/drawable-v24",
+            "comment": "Vector drawable support for API 24+"
+        },
+        {
+            "folder": "res/drawable",
+            "comment": "Base drawable folder"
         }
     ]
 }

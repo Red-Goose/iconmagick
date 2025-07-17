@@ -4,8 +4,12 @@ extends:
 env:
   node: true
   mocha: true
+  es2022: true
 plugins:
   - import
+parserOptions:
+  ecmaVersion: 2022
+  sourceType: module
 rules:
   no-console: 0
   # Sometimes I like a single 'return' statement in a full bloc, e.g. see the
@@ -13,3 +17,5 @@ rules:
   arrow-body-style: 0
   import/no-extraneous-dependencies: [error, { devDependencies: ['**/*.specs.js'] }]
   no-process-exit: 0
+  node/no-unpublished-require: 0
+  node/no-missing-require: 0

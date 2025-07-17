@@ -1,15 +1,30 @@
-version: 2
+version: 2.1
+orbs:
+  node: circleci/node@5.0.3
+
 jobs:
   # To test, we just build the code, run the tests, then create and upload
   # a coverage report.
   test-common: &test-common
     docker:
-        - image: satie/node:10-imagemagick
+        - image: cimg/node:18.17-browsers
     steps:
       - checkout
-      - run: make test
-      - run: npm run cov
-      - run: bash <(curl -s https://codecov.io/bash)
+      - run:
+          name: Install ImageMagick
+          command: sudo apt-get update && sudo apt-get install -y imagemagick
+      - run:
+          name: Install dependencies
+          command: npm ci
+      - run:
+          name: Run tests
+          command: npm test
+      - run:
+          name: Generate coverage
+          command: npm run cov
+      - run:
+          name: Upload coverage
+          command: bash <(curl -s https://codecov.io/bash)
       # Store test artifacts, useful for diagnosing failed tests.
       - store_artifacts:
           path: "src/init/test-images"
@@ -17,34 +32,34 @@ jobs:
           path: "src/label/test-images"
       - store_artifacts:
           path: "src/resize/test-images"
-  test-node10:
+  test-node18:
     <<: *test-common
     docker:
-      - image: satie/node:10-imagemagick
-  test-node12:
+      - image: cimg/node:18.17-browsers
+  test-node20:
     <<: *test-common
     docker:
-      - image: satie/node:12-imagemagick
-  test-node14:
+      - image: cimg/node:20.5-browsers
+  test-node22:
     <<: *test-common
     docker:
-      - image: satie/node:14-imagemagick
+      - image: cimg/node:22.5-browsers
 
 workflows:
   version: 2
   build:
     jobs:
-      - test-node10:
+      - test-node18:
           # All branches, all tags.
           filters:
             tags:
               only: /.*/
-      - test-node12:
+      - test-node20:
           # All branches, all tags.
           filters:
             tags:
               only: /.*/
-      - test-node14:
+      - test-node22:
           # All branches, all tags.
           filters:
             tags:

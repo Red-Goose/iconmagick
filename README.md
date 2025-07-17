@@ -2,7 +2,7 @@
 
 Icon management for mobile apps. Create icons, generate all the required sizes, label, and annotate. Supports Swift Native, Kotlin Native, React Native, Cordova, Xamarin, and more. 
 
-Inspired by [cordova-icon](https://github.com/AlexDisler/cordova-icon). Node 10 and up.
+Inspired by [cordova-icon](https://github.com/AlexDisler/cordova-icon). Node 18 and up.
 
 <!-- <img src="./assets/banner/banner.png" width="614" alt="Banner"> -->
 
@@ -302,10 +302,54 @@ This seems to be an issue with Imagemagick 6 - try upgrading to 7.
 MIT
 
 
-## Credit
+## Credits and Acknowledgments
 
-This library is a hard fork of [app-icon](https://github.com/dwmkerr/app-icon) by [Dave Kerr](https://github.com/dwmkerr). All credit for the bulk of the work and good-will be sent their way.
+### Original Projects
+
+This project has evolved from several open source contributions:
+
+#### Primary Foundation
+**iconmagick** is a hard fork of [**app-icon**](https://github.com/dwmkerr/app-icon) by [Dave Kerr](https://github.com/dwmkerr). The core architecture, icon processing logic, and initial CLI structure were built upon this excellent foundation. All credit for the bulk of the original work goes to Dave Kerr and the app-icon contributors.
+
+#### Inspiration
+The original [**app-icon**](https://github.com/dwmkerr/app-icon) project was itself inspired by [**cordova-icon**](https://github.com/AlexDisler/cordova-icon) by [Alex Disler](https://github.com/AlexDisler), which provided the initial concept of automated icon generation for mobile applications.
+
+### Key Contributors
+
+- **[Dave Kerr](https://github.com/dwmkerr)** - Original author of app-icon, core architecture and implementation
+- **[Alex Disler](https://github.com/AlexDisler)** - Original author of cordova-icon, foundational concept
+- **[Marvin Danig @Red Goose Team](https://github.com/marvindanig)** - Fork maintenance, bug fixes, and enhancements
+- **Community Contributors** - Various bug fixes, feature additions, and improvements
+
+### Evolution and Enhancements
+
+**iconmagick** (version 1.0.0+) includes significant enhancements:
+
+- **Modern Node.js Support**: Updated for Node.js 18+ compatibility
+- **Enhanced iOS Support**: Comprehensive Apple Watch and macOS icon generation
+- **Android 13+ Features**: Adaptive icons with monochrome support
+- **App Store Compliance**: Updated for latest iOS and Android store requirements
+- **Modern Dependencies**: All dependencies updated to latest stable versions
+- **CI/CD Improvements**: Modern build pipeline and testing infrastructure
+
+### License and Attribution
+
+This project is licensed under the MIT License, maintaining the same license as the original app-icon project. We gratefully acknowledge the open source community's contributions that made this tool possible.
+
+### Related Projects
+
+- [app-icon](https://github.com/dwmkerr/app-icon) - The direct parent project
+- [cordova-icon](https://github.com/AlexDisler/cordova-icon) - The original inspiration
+- [ImageMagick](https://imagemagick.org/) - The powerful image processing library that makes this all possible
+
+### Community
+
+Special thanks to the open source community for their continued support, bug reports, feature requests, and contributions. This project stands on the shoulders of giants and aims to give back to the community that made it possible.
+
+### Full Attribution
+
+For complete attribution details, including comprehensive credits to all contributors, dependencies, and project lineage, please see our [ATTRIBUTION.md](./ATTRIBUTION.md) file.
 
 
 
-[![npm version](https://badge.fury.io/js/iconmagick.svg)](https://badge.fury.io/js/iconmagick) [![CircleCI](https://circleci.com/gh/dwmkerr/iconmagick.svg?style=shield)](https://circleci.com/gh/dwmkerr/iconmagick) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/3e334rknhjbpx555?svg=true)](https://ci.appveyor.com/project/dwmkerr/iconmagick) [![codecov](https://codecov.io/gh/dwmkerr/iconmagick/branch/master/graph/badge.svg)](https://codecov.io/gh/dwmkerr/iconmagick) [![dependencies Status](https://david-dm.org/dwmkerr/iconmagick/status.svg)](https://david-dm.org/dwmkerr/iconmagick) [![devDependencies Status](https://david-dm.org/dwmkerr/iconmagick/dev-status.svg)](https://david-dm.org/dwmkerr/iconmagick?type=dev) [![GuardRails badge](https://badges.guardrails.io/dwmkerr/iconmagick.svg?token=569f2cc38a148f785f3a38ef0bcf5f5964995d7ca625abfad9956b14bd06ad96&provider=github)](https://dashboard.guardrails.io/default/gh/dwmkerr/iconmagick) [![Greenkeeper badge](https://badges.greenkeeper.io/dwmkerr/iconmagick.svg)](https://greenkeeper.io/) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![npm version](https://badge.fury.io/js/iconmagick.svg)](https://badge.fury.io/js/iconmagick) [![CircleCI](https://circleci.com/gh/Red-Goose/iconmagick.svg?style=shield)](https://circleci.com/gh/Red-Goose/iconmagick) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)

@@ -3,7 +3,7 @@
 /* eslint-disable consistent-return */
 
 const chalk = require('chalk');
-const program = require('commander');
+const { program } = require('commander');
 const imagemagickCli = require('imagemagick-cli');
 const path = require('path');
 const pack = require('../package.json');
@@ -153,6 +153,11 @@ program.on('--help', () => {
   console.log('    $ iconmagick label -i myicon.png -o myicon.out.png -t qa -b 1.2.3');
   console.log('    $ iconmagick init --caption "App"');
   console.log('    $ iconmagick init --caption "App" --adaptive-icons');
+  console.log('');
+  console.log('  Credits:');
+  console.log('    Based on app-icon by Dave Kerr and cordova-icon by Alex Disler');
+  console.log('    Enhanced and maintained by Red Goose team');
+  console.log('    See ATTRIBUTION.md for complete credits');
   console.log('');
 });
 

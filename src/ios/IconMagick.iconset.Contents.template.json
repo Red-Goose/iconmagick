@@ -125,6 +125,166 @@
       "idiom" : "ios-marketing",
       "filename" : "ItunesArtwork@2x.png",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "watch",
+      "size" : "24x24",
+      "scale" : "2x",
+      "role" : "notificationCenter",
+      "subtype" : "38mm"
+    },
+    {
+      "idiom" : "watch",
+      "size" : "27.5x27.5",
+      "scale" : "2x",
+      "role" : "notificationCenter",
+      "subtype" : "42mm"
+    },
+    {
+      "idiom" : "watch",
+      "size" : "33x33",
+      "scale" : "2x",
+      "role" : "notificationCenter",
+      "subtype" : "45mm"
+    },
+    {
+      "idiom" : "watch",
+      "size" : "29x29",
+      "scale" : "2x",
+      "role" : "companionSettings"
+    },
+    {
+      "idiom" : "watch",
+      "size" : "29x29",
+      "scale" : "3x",
+      "role" : "companionSettings"
+    },
+    {
+      "idiom" : "watch",
+      "size" : "40x40",
+      "scale" : "2x",
+      "role" : "appLauncher",
+      "subtype" : "38mm"
+    },
+    {
+      "idiom" : "watch",
+      "size" : "44x44",
+      "scale" : "2x",
+      "role" : "appLauncher",
+      "subtype" : "40mm"
+    },
+    {
+      "idiom" : "watch",
+      "size" : "46x46",
+      "scale" : "2x",
+      "role" : "appLauncher",
+      "subtype" : "41mm"
+    },
+    {
+      "idiom" : "watch",
+      "size" : "50x50",
+      "scale" : "2x",
+      "role" : "appLauncher",
+      "subtype" : "44mm"
+    },
+    {
+      "idiom" : "watch",
+      "size" : "51x51",
+      "scale" : "2x",
+      "role" : "appLauncher",
+      "subtype" : "45mm"
+    },
+    {
+      "idiom" : "watch",
+      "size" : "54x54",
+      "scale" : "2x",
+      "role" : "appLauncher",
+      "subtype" : "49mm"
+    },
+    {
+      "idiom" : "watch",
+      "size" : "86x86",
+      "scale" : "2x",
+      "role" : "quickLook",
+      "subtype" : "38mm"
+    },
+    {
+      "idiom" : "watch",
+      "size" : "98x98",
+      "scale" : "2x",
+      "role" : "quickLook",
+      "subtype" : "42mm"
+    },
+    {
+      "idiom" : "watch",
+      "size" : "108x108",
+      "scale" : "2x",
+      "role" : "quickLook",
+      "subtype" : "44mm"
+    },
+    {
+      "idiom" : "watch",
+      "size" : "117x117",
+      "scale" : "2x",
+      "role" : "quickLook",
+      "subtype" : "45mm"
+    },
+    {
+      "idiom" : "watch",
+      "size" : "129x129",
+      "scale" : "2x",
+      "role" : "quickLook",
+      "subtype" : "49mm"
+    },
+    {
+      "idiom" : "mac",
+      "size" : "16x16",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "mac",
+      "size" : "16x16",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "mac",
+      "size" : "32x32",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "mac",
+      "size" : "32x32",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "mac",
+      "size" : "128x128",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "mac",
+      "size" : "128x128",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "mac",
+      "size" : "256x256",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "mac",
+      "size" : "256x256",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "mac",
+      "size" : "512x512",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "mac",
+      "size" : "512x512",
+      "scale" : "2x"
     }
   ],
   "info" : {

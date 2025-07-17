@@ -1,11 +1,8 @@
-const rimraf = require('rimraf');
-const { promisify } = require('util');
-
-const rimrafAsync = promisify(rimraf);
+const { rimraf } = require('rimraf');
 
 //  Helper to delete a folder if it exists.
 async function deleteFolderIfExists(folder) {
-  return rimrafAsync(folder, {});
+  return rimraf(folder, {});
 }
 
 module.exports = deleteFolderIfExists;

@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const { EOL } = require('os');
-const mkdirp = require('mkdirp');
+const { mkdirp } = require('mkdirp');
 
 const androidManifestAdaptiveIcons = require('./AndroidManifest.adaptive-icons.json');
 const resizeImage = require('../resize/resize-image');
