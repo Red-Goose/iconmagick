@@ -1,0 +1,117 @@
+name: Auto-Deploy Latest Build
+
+on:
+  push:
+    branches: [ main, master ]
+  schedule:
+    # Run every night at 3 AM UTC (after auto-merge completes)
+    - cron: '0 3 * * *'
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  check-and-deploy:
+    name: Check for changes and deploy
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 2 # Fetch last 2 commits to check for changes
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Check for recent dependency updates
+      id: check-changes
+      run: |
+        # Check if there were any commits in the last 24 hours
+        recent_commits=$(git log --since="24 hours ago" --oneline | wc -l)
+        echo "recent_commits=$recent_commits" >> $GITHUB_OUTPUT
+        
+        # Check if the last commit was from dependabot
+        last_commit_author=$(git log --format='%an' -n 1)
+        echo "last_commit_author=$last_commit_author" >> $GITHUB_OUTPUT
+        
+        # Check if package.json or package-lock.json were modified
+        if git diff HEAD~1 --name-only | grep -E "(package\.json|package-lock\.json)"; then
+          echo "dependencies_updated=true" >> $GITHUB_OUTPUT
+        else
+          echo "dependencies_updated=false" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Setup Node.js
+      if: steps.check-changes.outputs.recent_commits > 0 || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        registry-url: 'https://registry.npmjs.org'
+        cache: 'npm'
+
+    - name: Install ImageMagick
+      if: steps.check-changes.outputs.recent_commits > 0 || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y imagemagick
+
+    - name: Install dependencies
+      if: steps.check-changes.outputs.recent_commits > 0 || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+      run: npm ci
+
+    - name: Run comprehensive tests
+      if: steps.check-changes.outputs.recent_commits > 0 || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+      run: |
+        npm run lint
+        npm test
+        npm run cov
+
+    - name: Check if semantic release is needed
+      id: semantic-check
+      if: steps.check-changes.outputs.recent_commits > 0 || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+      run: |
+        # Install semantic-release locally to check for version changes
+        npx semantic-release --dry-run --no-ci > semantic-output.txt 2>&1 || true
+        
+        if grep -q "Published release" semantic-output.txt; then
+          echo "should_release=true" >> $GITHUB_OUTPUT
+          echo "New release detected by semantic-release"
+        else
+          echo "should_release=false" >> $GITHUB_OUTPUT
+          echo "No new release needed"
+        fi
+        
+        cat semantic-output.txt
+
+    - name: Configure git for release
+      if: steps.semantic-check.outputs.should_release == 'true'
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+    - name: Run semantic release and publish
+      if: steps.semantic-check.outputs.should_release == 'true'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      run: |
+        npx semantic-release
+
+    - name: Notify deployment status
+      if: always()
+      uses: actions/github-script@v7
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const context = require('@actions/github').context;
+          const { owner, repo } = context.repo;
+          
+          let message = '🚀 **Auto-Deploy Status Report**\n\n';
+          message += `- **Trigger**: ${context.eventName}\n`;
+          message += `- **Recent commits**: ${{ steps.check-changes.outputs.recent_commits }}\n`;
+          message += `- **Dependencies updated**: ${{ steps.check-changes.outputs.dependencies_updated }}\n`;
+          message += `- **Should release**: ${{ steps.semantic-check.outputs.should_release }}\n`;
+          message += `- **Job status**: ${{ job.status }}\n`;
+          
+          if ('${{ steps.check-changes.outputs.last_commit_author }}' === 'dependabot[bot]') {
+            message += '\n✅ **Dependabot changes detected and processed**';
+          }
+          
+          console.log(message);

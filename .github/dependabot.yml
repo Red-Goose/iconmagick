@@ -3,23 +3,9 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 10
-    reviewers:
-      - "marvindanig"
-    assignees:
-      - "marvindanig"
-    commit-message:
-      prefix: "chore"
-      include: "scope"
-    labels:
-      - "dependencies"
-      - "automated"
-  
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"
+      interval: "daily"
+      time: "01:00"
+      timezone: "UTC"
     open-pull-requests-limit: 5
     reviewers:
       - "marvindanig"
@@ -27,7 +13,66 @@ updates:
       - "marvindanig"
     commit-message:
       prefix: "chore"
+      prefix-development: "chore"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "automated"
+    # Auto-merge settings
+    allow:
+      - dependency-type: "direct:production"
+        update-type: "version-update:semver-patch"
+      - dependency-type: "direct:development"
+        update-type: "version-update:semver-minor"
+      - dependency-type: "direct:development"
+        update-type: "version-update:semver-patch"
+    # Group related updates
+    groups:
+      test-dependencies:
+        patterns:
+          - "mocha"
+          - "chai"
+          - "nyc"
+        update-types:
+          - "minor"
+          - "patch"
+      linting-dependencies:
+        patterns:
+          - "eslint*"
+        update-types:
+          - "minor"
+          - "patch"
+      semantic-release:
+        patterns:
+          - "@semantic-release/*"
+          - "semantic-release"
+        update-types:
+          - "minor"
+          - "patch"
+  
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "01:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 3
+    reviewers:
+      - "marvindanig"
+    assignees:
+      - "marvindanig"
+    commit-message:
+      prefix: "ci"
       include: "scope"
     labels:
       - "github-actions"
       - "automated"
+    # Group GitHub Actions updates
+    groups:
+      actions:
+        patterns:
+          - "actions/*"
+        update-types:
+          - "minor"
+          - "patch"
