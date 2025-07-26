@@ -1,11 +1,7 @@
 const path = require('path');
 const fs = require('fs');
-const { promisify } = require('util');
-
-const writeFileAsync = promisify(fs.writeFile);
 
 const resizeImage = require('../resize/resize-image');
-const contentsTemplate = require('./Launch.imageset.Contents.template.json');
 
 //  Generate xCode icons given an iconset folder.
 module.exports = async function generateLaunchImagesetIcons(sourceIcon, iconset) {
@@ -22,7 +18,7 @@ module.exports = async function generateLaunchImagesetIcons(sourceIcon, iconset)
   //  Generate each image in the full icon set, updating the contents.
   await Promise.all(contents.images.map(async (image) => {
     // const targetName = `${image.idiom}-${image.size}-${image.scale}.png`;
-    const targetName = image.filename
+    const targetName = image.filename;
     const targetPath = path.join(iconset, targetName);
     const targetScale = parseInt(image.scale.slice(0, 1), 10);
     const targetSize = image.size.split('x').map((p) => p * targetScale).join('x');

@@ -4,8 +4,8 @@ const find = require('../utils/find');
 
 //  Create a regexp to exclude node modules, CordovaLib and build intermediates.
 //  The build folder rex also needs to be able to handle windows paths.
-const rexNodeModules = new RegExp('node_modules');
-const rexCordovaLib = new RegExp('CordovaLib');
+const rexNodeModules = /node_modules/;
+const rexCordovaLib = /CordovaLib/;
 const rexBuildFolder = new RegExp(`${path.normalize('/build/').replace(/\\/g, '\\\\')}`);
 
 //  Given a search root, finds all Android manifests.
