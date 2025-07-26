@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 2.0.0 (2025-07-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node.js 18 is no longer supported, minimum version is now Node.js 20
+
+### Features
+
+* drop Node.js 18 support, require Node.js 20+ ([057d0ff](https://github.com/Red-Goose/iconmagick/commit/057d0ffdf9eadffad76359907be4a491e0285f2f))
+* Release iconmagick v1.0.0 with Node.js 18+ support and modern CI/CD ([6f2cdc2](https://github.com/Red-Goose/iconmagick/commit/6f2cdc26669f18d10edb1cbc9e71fae710236e9e))
+
+
+### Bug Fixes
+
+* adjust image similarity thresholds for CI environment compatibility ([acd9f4d](https://github.com/Red-Goose/iconmagick/commit/acd9f4d2e097c89c0e899dce2e16fb96c0405449))
+* synchronize package-lock.json with package.json ([8923497](https://github.com/Red-Goose/iconmagick/commit/8923497858ecaf8a02a3d9f107e377b279d41ff1))
+
 ### [0.13.2](https://github.com/dwmkerr/app-icon/compare/v0.13.1...v0.13.2) (2020-04-06)
 
 ### [0.13.1](https://github.com/dwmkerr/app-icon/compare/v0.13.0...v0.13.1) (2019-11-07)
