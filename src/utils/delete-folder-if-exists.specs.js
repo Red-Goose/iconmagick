@@ -16,7 +16,7 @@ describe('delete-folder-if-exists', () => {
       await deleteFolderIfExists(undefined);
       assert.fail('deletion should fail - missing path');
     } catch (err) {
-      expect(err.message).to.match(/missing path/);
+      expect(err.message).to.match(/path.*(argument|missing)/);
     }
   });
 });

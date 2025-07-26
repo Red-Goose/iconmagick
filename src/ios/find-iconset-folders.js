@@ -7,6 +7,6 @@ module.exports = async function findIconsetFolders(searchRoot) {
     if (file.match(/node_modules/)) return false;
 
     //  only grab the iconset folders.
-    return file.match(/IconMagick.appiconset/) && stat.isDirectory();
+    return file.match(/IconMagick\.appiconset/) && stat.isDirectory();
   });
 };
