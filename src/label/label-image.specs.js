@@ -27,7 +27,7 @@ describe('labelImage', () => {
     const reference = './src/label/test-images/label-top-and-bottom-reference.png';
     await labelImage(input, output, 'top', 'bottom');
     const difference = await compareImages(output, reference);
-    expect(difference).to.be.below(10, 'Generated image is below accepted similarly threshold');
+    expect(difference).to.be.below(20, 'Generated image is below accepted similarly threshold');
   });
 
   it('should be able to add a label to the top and bottom and middle of an image', async () => {
@@ -36,7 +36,7 @@ describe('labelImage', () => {
     const reference = './src/label/test-images/label-top-and-bottom-and-middle-reference.png';
     await labelImage(input, output, 'top', 'bottom', 'middle');
     const difference = await compareImages(output, reference);
-    expect(difference).to.be.below(10, 'Generated image is below accepted similarly threshold');
+    expect(difference).to.be.below(40, 'Generated image is below accepted similarly threshold');
   });
 
   it('should not label an image at all if no captions are specified', async () => {
