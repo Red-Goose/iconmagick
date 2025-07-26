@@ -2,7 +2,7 @@
 
 Icon management for mobile apps. Create icons, generate all the required sizes, label, and annotate. Supports Swift Native, Kotlin Native, React Native, Cordova, Xamarin, and more. 
 
-Inspired by [cordova-icon](https://github.com/AlexDisler/cordova-icon). Node 18 and up.
+Inspired by [cordova-icon](https://github.com/AlexDisler/cordova-icon). Node 20 and up.
 
 <!-- <img src="./assets/banner/banner.png" width="614" alt="Banner"> -->
 
@@ -325,7 +325,7 @@ The original [**app-icon**](https://github.com/dwmkerr/app-icon) project was its
 
 **iconmagick** (version 1.0.0+) includes significant enhancements:
 
-- **Modern Node.js Support**: Updated for Node.js 18+ compatibility
+- **Modern Node.js Support**: Updated for Node.js 20+ compatibility
 - **Enhanced iOS Support**: Comprehensive Apple Watch and macOS icon generation
 - **Android 13+ Features**: Adaptive icons with monochrome support
 - **App Store Compliance**: Updated for latest iOS and Android store requirements

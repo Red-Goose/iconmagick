@@ -4,7 +4,7 @@
   "description": "Automatic icon resizing for mobile apps.",
   "main": "./src/index.js",
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "bin": {
     "iconmagick": "bin/iconmagick.js",
