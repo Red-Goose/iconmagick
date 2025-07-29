@@ -21,3 +21,5 @@ rules:
   node/no-missing-require: 0
   # Allow both LF and CRLF line endings for cross-platform compatibility
   linebreak-style: 0
+  # Disable shebang line ending enforcement for cross-platform compatibility
+  node/shebang: 0
