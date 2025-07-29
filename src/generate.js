@@ -1,4 +1,17 @@
-const chalk = require('chalk');
+// Handle both chalk v4 (CommonJS) and v5+ (ESM) compatibility
+let chalk;
+try {
+  chalk = require('chalk');
+  // If chalk is imported but doesn't have the expected API, wrap it
+  if (typeof chalk !== 'function' && (!chalk.green || typeof chalk.green !== 'function')) {
+    chalk = chalk.default || chalk;
+  }
+} catch (error) {
+  // Fallback if chalk fails to import
+  chalk = {
+    green: (text) => text
+  };
+}
 const findIconsetFolders = require('./ios/find-iconset-folders');
 const generateIconsetIcons = require('./ios/generate-iconset-icons');
 const findAndroidManifests = require('./android/find-android-manifests');

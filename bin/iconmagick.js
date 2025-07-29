@@ -2,7 +2,21 @@
 
 /* eslint-disable consistent-return */
 
-const chalk = require('chalk');
+// Handle both chalk v4 (CommonJS) and v5+ (ESM) compatibility
+let chalk;
+try {
+  chalk = require('chalk');
+  // If chalk is imported but doesn't have the expected API, wrap it
+  if (typeof chalk !== 'function' && (!chalk.green || typeof chalk.green !== 'function')) {
+    chalk = chalk.default || chalk;
+  }
+} catch (error) {
+  // Fallback if chalk fails to import
+  chalk = {
+    green: (text) => text,
+    red: (text) => text
+  };
+}
 const { program } = require('commander');
 const imagemagickCli = require('imagemagick-cli');
 const path = require('path');
