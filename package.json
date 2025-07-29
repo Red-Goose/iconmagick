@@ -1,6 +1,6 @@
 {
   "name": "iconmagick",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Automatic icon resizing for mobile apps.",
   "main": "./src/index.js",
   "engines": {
