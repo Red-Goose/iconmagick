@@ -27,7 +27,8 @@ async function init(template, output, options) {
   const h = Math.floor(width * 0.8);
 
   //  Create the command to generate the image.
-  const command = `convert \
+  const convertCmd = process.platform === 'win32' ? 'magick convert' : 'convert';
+  const command = `${convertCmd} \
         -background "rgba(0,0,0,0)" -fill white \
         -gravity center -size ${w}x${h} \
         -stroke black -strokewidth 2 caption:"${caption}" \

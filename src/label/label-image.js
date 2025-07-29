@@ -27,7 +27,8 @@ async function caption(input, output, label, gravity, proportionalSize) {
 
   //  Important: the quotes around the colour must be double quoutes for the
   //  command to work on Windows!
-  const command = `convert \
+  const convertCmd = process.platform === 'win32' ? 'magick convert' : 'convert';
+  const command = `${convertCmd} \
     -background "rgba(0,0,0,0.5)" -fill white \
     -gravity center -size ${width}x${height} \
     caption:"${label}" \
