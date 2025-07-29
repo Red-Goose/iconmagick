@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.2](https://github.com/Red-Goose/iconmagick/compare/v2.0.1...v2.0.2) (2025-07-29)
+
+
+### Bug Fixes
+
+* add defensive chalk import to handle version compatibility issues ([146e989](https://github.com/Red-Goose/iconmagick/commit/146e9898d814f5dfaa26bf70394b77334a9922e5))
+* resolve ESLint errors for chalk compatibility changes ([ea0483f](https://github.com/Red-Goose/iconmagick/commit/ea0483f8075329519afb5e6eb96ab309fd3ffe10))
+
 ### [2.0.1](https://github.com/Red-Goose/iconmagick/compare/v2.0.0...v2.0.1) (2025-07-29)
 
 ## 2.0.0 (2025-07-26)
