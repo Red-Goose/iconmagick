@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.3](https://github.com/Red-Goose/iconmagick/compare/v2.0.1...v2.0.3) (2025-07-29)
+
+
+### Bug Fixes
+
+* add defensive chalk import to handle version compatibility issues ([146e989](https://github.com/Red-Goose/iconmagick/commit/146e9898d814f5dfaa26bf70394b77334a9922e5))
+* disable linebreak-style ESLint rule for cross-platform compatibility ([bacc562](https://github.com/Red-Goose/iconmagick/commit/bacc5621e6ce3f6d9ad481d712e03f2003b665fe))
+* disable node/shebang ESLint rule for cross-platform compatibility ([0d5ce74](https://github.com/Red-Goose/iconmagick/commit/0d5ce74d5143dfd8c55af347cd9d2e0d3a3f86ba))
+* resolve ESLint errors for chalk compatibility changes ([ea0483f](https://github.com/Red-Goose/iconmagick/commit/ea0483f8075329519afb5e6eb96ab309fd3ffe10))
+* resolve Windows ImageMagick executable conflicts ([688d8d8](https://github.com/Red-Goose/iconmagick/commit/688d8d88efc9880f01ff859cc95af07deb4b2aac))
+
 ### [2.0.1](https://github.com/Red-Goose/iconmagick/compare/v2.0.0...v2.0.1) (2025-07-29)
 
 ## 2.0.0 (2025-07-26)
