@@ -3,7 +3,8 @@ const childProcess = require('child_process');
 //  Compare two images, returning the percentage of differing pixels.
 module.exports = function compareImages(lhs, rhs) {
   return new Promise((resolve, reject) => {
-    const compareCommand = `compare -metric ae "${lhs}" "${rhs}" null:`;
+    const compareCmd = process.platform === 'win32' ? 'magick compare' : 'compare';
+    const compareCommand = `${compareCmd} -metric ae "${lhs}" "${rhs}" null:`;
     childProcess.exec(compareCommand, (err, _, stderr) => {
       //  Remember: imagemagick is odd here. Error code 1 means the images are
       //  different, not that the program failed. Also, stderr is used for
@@ -20,7 +21,8 @@ module.exports = function compareImages(lhs, rhs) {
       }
 
       //  Now get the differing pixels as a percentage.
-      const identifyCommand = `identify -format "%[fx:${differingPixels}*100/(w*h)]" "${lhs}"`;
+      const identifyCmd = process.platform === 'win32' ? 'magick identify' : 'identify';
+      const identifyCommand = `${identifyCmd} -format "%[fx:${differingPixels}*100/(w*h)]" "${lhs}"`;
       return childProcess.exec(identifyCommand, (identifyErr, percentage) => {
         if (identifyErr) {
           console.log(`child processes failed with error code: ${identifyErr.code}`);
