@@ -1,4 +1,5 @@
 // Handle both chalk v4 (CommonJS) and v5+ (ESM) compatibility
+/* eslint-disable global-require */
 let chalk;
 try {
   chalk = require('chalk');
@@ -9,9 +10,10 @@ try {
 } catch (error) {
   // Fallback if chalk fails to import
   chalk = {
-    green: (text) => text
+    green: (text) => text,
   };
 }
+/* eslint-enable global-require */
 const findIconsetFolders = require('./ios/find-iconset-folders');
 const generateIconsetIcons = require('./ios/generate-iconset-icons');
 const findAndroidManifests = require('./android/find-android-manifests');

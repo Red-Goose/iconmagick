@@ -3,6 +3,7 @@
 /* eslint-disable consistent-return */
 
 // Handle both chalk v4 (CommonJS) and v5+ (ESM) compatibility
+/* eslint-disable global-require */
 let chalk;
 try {
   chalk = require('chalk');
@@ -14,9 +15,10 @@ try {
   // Fallback if chalk fails to import
   chalk = {
     green: (text) => text,
-    red: (text) => text
+    red: (text) => text,
   };
 }
+/* eslint-enable global-require */
 const { program } = require('commander');
 const imagemagickCli = require('imagemagick-cli');
 const path = require('path');
