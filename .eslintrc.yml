@@ -19,3 +19,5 @@ rules:
   no-process-exit: 0
   node/no-unpublished-require: 0
   node/no-missing-require: 0
+  # Allow both LF and CRLF line endings for cross-platform compatibility
+  linebreak-style: 0
