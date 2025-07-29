@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.5](https://github.com/Red-Goose/iconmagick/compare/v2.0.4...v2.0.5) (2025-07-29)
+
+
+### Bug Fixes
+
+* resolve Windows ImageMagick compare command conflicts ([5babb0d](https://github.com/Red-Goose/iconmagick/commit/5babb0d02b5daa6807a7758a944fc56e91ff7414))
+
 ### [2.0.4](https://github.com/Red-Goose/iconmagick/compare/v2.0.3...v2.0.4) (2025-07-29)
 
 ### [2.0.3](https://github.com/Red-Goose/iconmagick/compare/v2.0.1...v2.0.3) (2025-07-29)
