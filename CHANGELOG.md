@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.6](https://github.com/Red-Goose/iconmagick/compare/v2.0.5...v2.0.6) (2025-07-30)
+
+
+### Bug Fixes
+
+* remove redundant context import in GitHub Actions script ([f2d0134](https://github.com/Red-Goose/iconmagick/commit/f2d0134ed618fe63136a9f0c6d4cf611ab3acbd1))
+
 ### [2.0.5](https://github.com/Red-Goose/iconmagick/compare/v2.0.4...v2.0.5) (2025-07-29)
 
 
